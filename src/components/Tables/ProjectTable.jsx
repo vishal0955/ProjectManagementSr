@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Table, Dropdown, Modal, Button, Form } from "react-bootstrap";
 import { FaEllipsisV } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import TaskForm from "../Forms/AddTask";
+import TaskForm from "../Forms/AddItem";
 
 const priorityColors = {
   High: "danger",
@@ -106,6 +106,7 @@ const ProjectTable = () => {
             <th>Client</th>
             <th>Priority</th>
             <th>Status</th>
+            <th>Link</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -121,9 +122,7 @@ const ProjectTable = () => {
               <td >
                 <Dropdown onSelect={(eventKey) => handlePriorityChange(index, eventKey)}>
                   <Dropdown.Toggle variant={priorityColors[project.priority]} >{project.priority}</Dropdown.Toggle>
-                  <Dropdown.Toggle variant={priorityColors[project.priority]}>
-                    {project.priority}
-                  </Dropdown.Toggle>
+                
                   <Dropdown.Menu>
                     {Object.keys(priorityColors).map((priority) => (
                       <Dropdown.Item key={priority} eventKey={priority}>
@@ -146,6 +145,9 @@ const ProjectTable = () => {
                     ))}
                   </Dropdown.Menu>
                 </Dropdown>
+              </td>
+              <td>
+                
               </td>
               <td>
                 <Dropdown>
