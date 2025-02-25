@@ -3,13 +3,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
-import AddTask from "../Forms/AddTask";
+import AddItem from "../Forms/AddItem";
 import AddProject from "../Forms/AddProject";
 import AddLog from "../Forms/AddLog";
+
+import TaskNewForm from "./TaskNewForm";
 
 const TableHeader = ({ title, buttonText }) => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+
+  const [showAddTask, setShowAddTask] = useState(false);
 
   const formButton = (buttonText) =>
     buttonText.toLowerCase().replace(/\s+/g, "");
@@ -17,7 +21,7 @@ const TableHeader = ({ title, buttonText }) => {
   const handleButtonClick = () => {
     if (
       buttonText === "Add Project" ||
-      buttonText === "Add Task" ||
+      buttonText === "Add Item" ||
       buttonText === "Add Log"
     ) {
       setShowModal(true);
@@ -43,6 +47,7 @@ const TableHeader = ({ title, buttonText }) => {
         
             
           </div>
+        {!buttonText === "Add Project" && <button variant="primary" className="btn btn-primary ms-2" onClick={() => setShowAddTask(true)} >Add Task </button>}
           </div>
         <div
           className="collapse navbar-collapse justify-content-center"
@@ -212,8 +217,20 @@ const TableHeader = ({ title, buttonText }) => {
             </div>
           </ul>
         </div>
+
        
       </div>
+
+      {/* ADd Task */}
+      <Modal show={showAddTask} onHide={() => setShowAddTask(false)} style={{height: "100vh"}}>
+        <Modal.Header closeButton>
+         
+        </Modal.Header>
+        <Modal.Body>
+           <TaskNewForm setShowAddTask={setShowAddTask}/>
+        </Modal.Body>
+      </Modal>
+
 
       {/* Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
@@ -223,8 +240,8 @@ const TableHeader = ({ title, buttonText }) => {
         <Modal.Body>
           {buttonText === "Add Project" ? (
             <AddProject /> 
-          ) : buttonText === "Add Task" ? (
-            <AddTask />
+          ) : buttonText === "Add Item" ? (
+            <AddItem />
           ) : (
             <AddLog />
           )}
