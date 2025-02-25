@@ -9,6 +9,7 @@ Chart.register(...registerables);
 
 const ProjectManagementDashboard = () => {
   const [showClockIn, setShowClockIn] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleShowClockIn = () => {
     setShowClockIn(true)
@@ -185,6 +186,7 @@ const ProjectManagementDashboard = () => {
             </Card>
           </Col>
         </Row>
+         <ClockInModal show={showClockIn} handleClose={handleCloseClockIn} setShowClockIn={setShowClockIn}/>
       </Container-fluid>
     </div>
    

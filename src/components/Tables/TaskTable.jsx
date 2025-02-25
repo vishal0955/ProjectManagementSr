@@ -323,7 +323,7 @@ export const TaskTable = () => {
 const TaskPage = () => {
   return (
     <div style={{ height: "100vh" }}>
-      <TableHeader title="All Tasks" buttonText="Add Task" />
+      <TableHeader title="All Item" buttonText="Add Item" />
       <TaskTable className="tabledown" />
     </div>
   );
