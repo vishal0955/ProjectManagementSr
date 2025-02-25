@@ -243,9 +243,11 @@ export const ProjectOverview = () => {
 const components = [
   <ProjectOverview />,
   <ProjectMembers />,
-  <FileUpload />,
+ 
   <TableTask />,
+
   <InvoiceTable />,
+  <FileUpload />,
   // <Timesheet />,
   <TimeLogTable />,
   <div className="p-3">
@@ -256,9 +258,11 @@ const components = [
 const tabLabels = [
   "Overview",
   "Members",
-  "Files",
+  
   "Tasks",
+ 
   "Invoices",
+  "Files",
   "Timesheet",
 ];
 const statusFilters = ["Pending", "InProgress", "Completed"];
