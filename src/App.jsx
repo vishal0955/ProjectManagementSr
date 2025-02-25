@@ -9,7 +9,7 @@ import Login from "./authtication/Login";
 import ProjectOwner from "./components/Tables/ProjectOwner";
 import TaskPage from "./components/Tables/TaskTable";
 import AddProject from "./components/Forms/AddProject";
-import TaskForm from "./components/Forms/AddTask";
+import TaskForm from "./components/Forms/AddItem";
 import DashBoard from "./components/DashBoard";
 import Timesheet from "./components/Tables/TimesheetTable";
 import TimeLogForm from "./components/Forms/AddLog";
@@ -101,6 +101,7 @@ function App() {
             <Route path="/department" element={<Department />} />
             <Route path="/adddesigna" element={<AddDesignation />} />
             <Route path="/addDepart" element={<AddDepartment />} />
+            <Route path="/tasks" element={<TableTask />} />
             <Route path="/projectmanagementdashboard" element={<ProjectManagementDashboard />} />
             <Route path="/project" element={<ProjectOwner />} />
             <Route path="/projectdetails" element={<ProjectDetail />} />

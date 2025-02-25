@@ -1,12 +1,16 @@
 import React from "react";
 import { Container, Row, Col, Card, Button, Tab, Nav } from "react-bootstrap";
 import { FaCheckCircle, FaUpload } from "react-icons/fa";
+import { ClockInModal } from "./Dashboard";
 
 const TaskDetails = () => {
   return (
     <div className="task-detail-section mt-4 mb-4">
       <Container fluid>
+        <div className="d-flex justify-content-between">
         <h4 className="fw-bold">Task # EMA-50</h4>
+        <Button variant="primary"> </Button>
+        </div>
         <p>
           <strong>Alice:</strong> 'allow me.'
         </p>
@@ -112,6 +116,8 @@ const TaskDetails = () => {
             </Tab.Content>
           </Tab.Container>
         </Card>
+
+          
       </Container>
     </div>
   );

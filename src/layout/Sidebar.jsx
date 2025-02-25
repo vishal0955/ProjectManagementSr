@@ -158,6 +158,11 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
                   <li className={`submenu-item ${isActive("/tasklist") ? "active" : ""}`}
                     onClick={() => { navigate("/tasklist"); menuItemClick(); }}>
                       <i className="fa-solid fa-square-check"></i>
+                    <span className="menu-text">Item</span>
+                  </li>
+                  <li className={`submenu-item ${isActive("/tasks") ? "active" : ""}`}
+                    onClick={() => { navigate("/tasks"); menuItemClick(); }}>
+                      <i className="fa-solid fa-square-check"></i>
                     <span className="menu-text">Task</span>
                   </li>
                   <li className={`submenu-item ${isActive("/timesheet") ? "active" : ""}`}

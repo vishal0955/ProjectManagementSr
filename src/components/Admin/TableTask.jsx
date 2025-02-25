@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Container, Table, Button, Dropdown, Form, Modal } from "react-bootstrap";
 import { FaPlus, FaFileExport, FaEllipsisV } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import TaskForm from "../Forms/AddTask";
+import TaskForm from "../Forms/AddItem";
+import TaskNewForm from "../Tables/TaskNewForm";
+
 
 const TableTask = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +14,6 @@ const TableTask = () => {
     setShowModal(true);
   };
 
-  // Priority के colors define किए गए
   const priorityColors = {
     High: { bg: "#dc3545", text: "white" }, // Red for High
     Medium: { bg: "#ffc107", text: "black" }, // Yellow for Medium
@@ -20,6 +21,10 @@ const TableTask = () => {
   };
 
   const [tasks, setTasks] = useState([
+    { code: "BOT-5", task: "March Hare. Visit.", priority: "High", startDate: "19-01-2025", dueDate: "27-01-2025", hours: "5h", assignedTo: "User1", status: "Doing" },
+    { code: "BOT-4", task: "As soon as look at.", priority: "Low", startDate: "06-01-2025", dueDate: "13-01-2025", hours: "0s", assignedTo: "User2", status: "Incomplete" },
+    { code: "BOT-2", task: "As she said these.", priority: "High", startDate: "10-01-2025", dueDate: "11-01-2025", hours: "0s", assignedTo: "User3", status: "To Do" },
+    { code: "BOT-1", task: "White Rabbit; 'in.", priority: "Medium", startDate: "19-01-2025", dueDate: "21-01-2025", hours: "0s", assignedTo: "User3", status: "Doing" },
     { code: "BOT-5", task: "March Hare. Visit.", priority: "High", startDate: "19-01-2025", dueDate: "27-01-2025", hours: "5h", assignedTo: "User1", status: "Doing" },
     { code: "BOT-4", task: "As soon as look at.", priority: "Low", startDate: "06-01-2025", dueDate: "13-01-2025", hours: "0s", assignedTo: "User2", status: "Incomplete" },
     { code: "BOT-2", task: "As she said these.", priority: "High", startDate: "10-01-2025", dueDate: "11-01-2025", hours: "0s", assignedTo: "User3", status: "To Do" },
@@ -121,7 +126,7 @@ const TableTask = () => {
       <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <TaskForm />
+          <TaskNewForm />
         </Modal.Body>
       </Modal>
     </div>
